@@ -32,15 +32,15 @@ class App extends React.Component{
     return(
       <div className={styles.container}>
         <img className={styles.image} src={coronaImage} alt="COVID-19"/>
+<br>      
+        <CountryPicker handleCountryChange ={this.handleCountryChange}/>
       
-      
-      
+<br>      
       <Grid container spacing={3}>
         <Grid item xs={12} sm={6}>
           <Cards data={data} />
         </Grid>
         <Grid item xs={12} sm={6}>
-        <CountryPicker handleCountryChange ={this.handleCountryChange}/>
         <Chart data={data} country={country}/>
         </Grid>
       </Grid>
