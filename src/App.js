@@ -1,4 +1,5 @@
 import React from 'react';
+import {Grid} from '@material-ui/core';
 import { Cards, Chart, CountryPicker } from './components';
 import styles from './App.module.css';
 import fetchData from './api';
@@ -31,9 +32,20 @@ class App extends React.Component{
     return(
       <div className={styles.container}>
         <img className={styles.image} src={coronaImage} alt="COVID-19"/>
-        <Cards data={data} />
+      
+      
+      
+      <Grid container spacing={3}>
+        <Grid item xs={12} sm={6}>
+          <Cards data={data} />
+        </Grid>
+        <Grid item xs={12} sm={6}>
         <CountryPicker handleCountryChange ={this.handleCountryChange}/>
         <Chart data={data} country={country}/>
+        </Grid>
+      </Grid>
+  
+      
       </div>
     )
   }
